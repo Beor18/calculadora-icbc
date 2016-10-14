@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html ng-app="project">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link type="text/css" rel="stylesheet" href="style.css" />
+  <link type="text/css" rel="stylesheet" href="bootstrap.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.min.js">
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js">
+  </script>
+  <script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js"></script>
+  <script src="project.js"></script>
+  <script src="project-list.js"></script>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css">
+  <title>Banco ICBC</title>
+</head>
+<body>
+
+  <nav col-md-12>
+    <ul class="lista">
+      <li class="ramm">
+        <a href="http://#">Inicio</a>
+      </li>
+      <li class="ramm">
+        <a href="http://#">Nosotros</a>
+      </li>
+      <li class="ramm">
+        <a href="http://#">Contacto</a>
+      </li>
+    </ul>
+  </nav>
+
+
+  <div class="calculo-plazo col-md-6">
+    <form id="calc">
+
+            <h3>Calculo de Plazo Fijo - Banco ICBC</h3>
+
+
+
+            <p>Dep&oacute;sito Inicial: <input placeholder="$" id="deposito" /> </p>
+
+            <p>Duracion (en d&iacute;as): <input placeholder="d&iacute;as" id="duracion" /> </p>
+            <p>Interes Final: <span id="calc_result">$0.00</span> </p>
+            <p>Obtenes a 120 dias: <span id="calc_result_total_cientoveinte">$0.00</span> </p>
+            <p>Obtenes a 1 año: <span id="calc_result_total_unano">$0.00</span> </p>
+            <p>Saldo Final: <span id="calc_result_total">$0.00</span> </p>
+
+
+            <input id="calcular" type="button" name="submit" value="Calcular" onclick="calc()" />
+
+
+
+        </form>
+      </div>
+
+
+
+      <div class="calculo-minimo col-md-6">
+        <form id="calcular_minin">
+
+      		    	<h3>Calculo de Pago Minimo - Banco ICBC</h3>
+
+
+
+
+                <p>Ingrese su Pago Total: <input placeholder="$" id="pago_total" /> </p>
+
+                <p>Ingrese su Pago Minimo: <input placeholder="minimo" id="pago_minimo" /> </p>
+                <p>Interes: <span id="calc_inte_min">$0.00</span> </p>
+                <p>IVA 21%: <span id="calc_result_total_iva">$0.00</span> </p>
+                <p>Interes Final: <span id="calc_result_total_iva_final">$0.00</span> </p>
+                <p>Pagando el minimo le queda: <span id="calc_result_total_queda">$0.00</span> </p>
+                <p>Saldo Final al proximo mes: <span id="calc_result_total_min">$0.00</span> </p>
+
+
+                <input id="calcular" type="button" name="submit" value="Calcular" onclick="calc()" />
+
+
+
+            </form>
+          </div>
+
+         <!-- <div class="row col-md-12">
+            <h2 class="titulo-2">Comentarios</h2>
+            <div class="col-md-6 comentario" ng-view>
+
+
+            </div>
+          </div>-->
+
+  <footer class="col-md-12">
+    <div class="lema">
+      <p>Desarrollado por <a href="http://www.produccionesbw.com.ar">BW Producciones - 2016 -</a></p>
+    </div>
+
+
+  </footer>
+
+<script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+$('#calcular').click(function () {
+
+    var deposito = $('#deposito').val();
+
+    var duracion = $('#duracion').val();
+
+    if(deposito!='' && 25 /100 && duracion!=''){
+
+       var cf = deposito * (1 * 25 /100 * (duracion / 365));
+       var cf_total_cientoveinte = deposito * (1 * 25 /100 * (120 / 365));
+       var cf_total_unano = deposito * (1 * 25 /100 * (365 / 365));
+       var cf_total = deposito * (1 + 25 /100 * (duracion / 365));
+
+      if (cf >= 0) {
+          $('#calc_result').text('$' + cf.toFixed(2));
+          $('#calc_result_total_cientoveinte').text('$' + cf_total_cientoveinte.toFixed(2));
+          $('#calc_result_total_unano').text('$' + cf_total_unano.toFixed(2));
+          $('#calc_result_total').text('$' + cf_total.toFixed(2));
+          $('#clac_error').text('');
+      } else {
+          $('#clac_error').text('$0.00');
+          $('#clac_error').text('Ingrese solo numeros.');
+      }
+
+    }else{
+        $('#clac_error').text('Complete todos los datos.');
+    }
+
+});
+
+
+$('#calcular_minin').click(function () {
+
+    var pago_total = $('#pago_total').val();
+
+    var pago_minimo = $('#pago_minimo').val();
+
+    var pago_queda = pago_total - pago_minimo
+
+    if(pago_minimo!='' && 25 /100 && 30!=''){
+
+       var cf = pago_queda * ( 1 * 25 /100 * (30 / 365));
+       var cf_total_minimo = cf + pago_queda;
+       var cf_total_queda_minimo = pago_queda;
+       var cf_total_iva = cf * 21/100;
+       var cf_total_iva_final = cf * 21/100 + cf;
+
+      if (cf >= 0) {
+          $('#calc_inte_min').text('$' + cf.toFixed(2));
+          $('#calc_result_total_min').text('$' + cf_total_minimo.toFixed(2));
+          $('#calc_result_total_queda').text('$' + cf_total_queda_minimo.toFixed(2));
+          $('#calc_result_total_iva').text('$' + cf_total_iva.toFixed(2));
+          $('#calc_result_total_iva_final').text('$' + cf_total_iva_final.toFixed(2));
+          $('#clac_error').text('');
+      } else {
+          $('#clac_error').text('$0.00');
+          $('#clac_error').text('Ingrese solo numeros.');
+      }
+
+    }else{
+        $('#clac_error').text('Complete todos los datos.');
+    }
+
+});
+</script>
+
+</body>
+</html>

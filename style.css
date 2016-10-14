@@ -1,0 +1,559 @@
+#calc {
+    padding:50px 80px;
+    font-family:"Lucida Grande","bitstream vera sans","trebuchet ms",sans-serif,verdana;
+    font-size: 14px;
+}
+
+#calcular_minin {
+    padding:50px 80px;
+    font-family:"Lucida Grande","bitstream vera sans","trebuchet ms",sans-serif,verdana;
+    font-size: 14px;
+}
+
+#calcular_minin .inputs
+{
+   height: 70px;
+}
+
+#calc .inputs
+{
+   height: 70px;
+}
+
+#calc .inputs label
+{
+  display:block;
+}
+
+#calcular_minin .inputs label
+{
+  display:block;
+}
+
+
+#calc .inputs input[type=button]
+{
+  height: 40px;
+  width: 102px;
+  font-weight:bold;
+
+ /* -moz-box-shadow:inset 0 0 8px #333;*/
+
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) inset;
+
+ -moz-border-radius: 7px;
+ -webkit-border-radius: 7px;
+}
+
+#calcular_minin .inputs input[type=button]
+{
+  height: 40px;
+  width: 102px;
+  font-weight:bold;
+
+ /* -moz-box-shadow:inset 0 0 8px #333;*/
+
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) inset;
+
+ -moz-border-radius: 7px;
+ -webkit-border-radius: 7px;
+}
+
+#calc .inputs input[type=number]
+ {
+   height: 28px;
+   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) inset;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+ }
+
+ #calcular_minin .inputs input[type=number]
+  {
+    height: 28px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) inset;
+   -moz-border-radius: 7px;
+   -webkit-border-radius: 7px;
+  }
+
+#calc .result
+{
+border: 3px solid red ;
+-moz-border-radius: 7px;
+-webkit-border-radius: 7px;
+padding: 10px;
+
+width: 250px;
+color: red;
+
+font-weight:bold;
+font-size: 120%
+}
+
+
+#calcular_minin .result
+{
+border: 3px solid red ;
+-moz-border-radius: 7px;
+-webkit-border-radius: 7px;
+padding: 10px;
+
+width: 250px;
+color: red;
+
+font-weight:bold;
+font-size: 120%
+}
+
+#calc .result #calc_result1
+{
+  display:inline;
+}
+
+#calcular_minin .result #calc_result1
+{
+  display:inline;
+}
+
+
+
+/* the input field */
+#calc .range {
+   font-size: 16px;
+    line-height: 1.4;
+    padding: 0.4em;
+	width: 50px;
+
+    height: 19px; /* 28 */
+   /* border:1px inset #ddd;*/
+    float:left;
+    margin:0 0 0 8px;
+    text-align:center;
+	/*
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;*/
+	 box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) inset;
+	  border-radius: 0.6em 0.6em 0.6em 0.6em;
+	 border: 1px solid #C6C6C6;
+	 color: #333333;
+}
+
+
+/* the input field */
+#calcular_minin .range {
+   font-size: 16px;
+    line-height: 1.4;
+    padding: 0.4em;
+	width: 50px;
+
+    height: 19px; /* 28 */
+   /* border:1px inset #ddd;*/
+    float:left;
+    margin:0 0 0 8px;
+    text-align:center;
+	/*
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;*/
+	 box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) inset;
+	  border-radius: 0.6em 0.6em 0.6em 0.6em;
+	 border: 1px solid #C6C6C6;
+	 color: #333333;
+}
+
+@font-face {
+font-family: 'ChaparralProRegular';
+src: url('/fonts/chaparral_pro_regular-webfont.eot');
+src: url('/fonts/chaparral_pro_regular-webfont.eot?#iefix') format('embedded-opentype'),
+url('/fonts/chaparral_pro_regular-webfont.woff') format('woff'),
+url('/fonts/chaparral_pro_regular-webfont.ttf') format('truetype'),
+url('/fonts/chaparral_pro_regular-webfont.svg#ChaparralProRegular') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+
+html{
+background:#f2f2f2 url(../img/bg2.png);
+}
+
+
+body{
+margin:0;
+padding:0;
+font-family: helvetica,arial;
+font-size:14px;
+background:transparent url(../img/bg.png) top repeat-x;
+color:#666;
+}
+
+
+h1{
+color:#0071bc;
+font-family: 'ChaparralProRegular';
+font-weight:normal;
+font-size:42px;
+margin:0;
+}
+
+h2{
+color:#0071bc;
+font-family: 'ChaparralProRegular';
+font-weight:normal;
+font-size:36px;
+margin:0;
+}
+
+h3{
+font-family: 'ChaparralProRegular';
+color:#0071bc;
+font-size:22px;
+margin:0;
+margin-bottom:5px;
+}
+
+h4{
+font-family: 'ChaparralProRegular';
+font-weight:normal;
+font-size:18px;
+margin:0 2px;
+margin-bottom:15px;
+color:#666;
+}
+
+
+a{
+color:#0071bc;
+}
+
+ul{
+list-style:none;
+padding:0 20px;
+}
+
+img{
+border:none;
+vertical-align:middle;
+}
+
+iframe{
+border:none;
+background:none;
+}
+
+.right{
+float:right;
+color:#fff;
+text-align:right;
+}
+
+.small {
+	font-size: 0.7em;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+/*------header-------*/
+
+#header{
+width:1000px;
+margin:0 auto;
+position:relative;
+padding:20px 0;
+}
+
+
+
+
+/*-------content-------*/
+
+
+#content{
+width:1050px; /* old value: 1000px */
+margin:10px auto;
+overflow:hidden;
+}
+
+
+
+
+
+.clear{
+clear:both;
+text-align:right;
+margin-bottom: 20px;
+padding:0 0 20px 0;
+border-bottom:1px solid #ebebeb;
+}
+
+
+
+
+/*-------footer-------*/
+
+
+#footer{
+background:#000;
+padding:15px 5px;
+overflow:hidden;
+}
+
+#footer div{
+width:1000px;
+margin:0 auto;
+padding:0px 0;
+}
+
+#footer img{
+vertical-align:middle;
+}
+
+#footer a{
+color:#999;
+text-decoration:none;
+}
+
+#footer a:hover{
+text-decoration:underline;
+}
+
+#footer ul{
+	float:left;
+	padding:0;
+	margin:0;
+	margin-right:20px;
+}
+
+#footer ul li{
+margin-bottom: 3px;
+}
+
+#footer ul li a{
+color:#fff;
+text-decoration:none;
+}
+
+#footer ul li a:hover{
+text-decoration:underline;
+}
+
+
+#footer .right{
+width:300px
+}
+
+
+
+h2{
+  font-size: 160%;
+  color:#666;
+}
+
+#calc{
+    width:450px;
+    border:3px solid #eee;
+    padding:40px;
+    margin:40px auto;
+    overflow:hidden;
+    font-size: 110%;
+}
+
+.comentarios{
+    width:450px;
+    border:3px solid #eee;
+    padding:40px;
+    margin:40px auto;
+    overflow:hidden;
+    font-size: 110%;
+}
+
+.comentarios h2{
+  margin-bottom: 20px;
+}
+
+.comentario {
+  margin: auto 36%;
+  padding: 5%;
+}
+
+.titulo-2 {
+  margin: auto 36%;
+}
+
+#calcular_minin{
+    width:450px;
+    border:3px solid #eee;
+    padding:40px;
+    margin:40px auto;
+    overflow:hidden;
+    font-size: 110%;
+}
+
+#calc h3{
+  margin-bottom: 20px;
+}
+
+#calcular_minin h3{
+  margin-bottom: 20px;
+}
+
+
+#calc p {
+    overfolw:hidden;
+    border-bottom:1px dotted #ccc;
+    padding-bottom:7px;
+}
+
+#calcular_minin p {
+    overfolw:hidden;
+    border-bottom:1px dotted #ccc;
+    padding-bottom:7px;
+}
+
+#calc input {
+    float:right;
+    border:1px solid #CCC;
+    text-align:right;
+    padding:2px;
+    width:80px;
+    font-size: 110%;
+}
+
+#calcular_minin input {
+    float:right;
+    border:1px solid #CCC;
+    text-align:right;
+    padding:2px;
+    width:80px;
+    font-size: 110%;
+}
+
+#calc #calcular {
+    text-align:center;
+    width:100%;
+    color:#fff;
+    background:#2a56a1 top center url(../img/menu3.png) no-repeat;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    padding:5px 12px;
+}
+
+#calcular_minin #calcular {
+    text-align:center;
+    width:100%;
+    color:#fff;
+    background:#2a56a1 top center url(../img/menu3.png) no-repeat;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    padding:5px 12px;
+}
+
+#calc #calc_result {
+    color:green;
+    font-size:130%;
+    float:right;
+}
+
+#calcular_minin #calc_inte_min {
+    color:green;
+    font-size:130%;
+    float:right;
+}
+
+#calc #calc_result_total {
+    color:green;
+    font-size:130%;
+    float:right;
+}
+
+#calcular_minin #calc_result_total_min {
+    color:green;
+    font-size:130%;
+    float:right;
+}
+
+#calc #calc_result_total_cientoveinte {
+    color:blue;
+    font-size:130%;
+    float:right;
+}
+
+#calc #calc_result_total_unano {
+    color:#b70808;
+    font-size:130%;
+    float:right;
+}
+
+#calcular_minin #calc_result_total_queda {
+    color:#b70808;
+    font-size:130%;
+    float:right;
+}
+
+#calcular_minin #calc_result_total_iva {
+    color:#b70808;
+    font-size:130%;
+    float:right;
+}
+
+#calcular_minin #calc_result_total_iva_final {
+    color:green;
+    font-size:130%;
+    float:right;
+}
+
+#calc #clac_error {
+    color:red;
+}
+
+
+nav {
+  padding: 10px;
+  background-color: #333;
+  text-align: center;
+}
+
+.ramm {
+  display: inline;
+
+}
+li {
+  background: #333;
+  padding: 20px;
+
+}
+
+li a {
+  padding: 20px;
+  color: red;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #F2F2F2;
+}
+
+.calculo-minimo {
+  display: inline;
+}
+
+.calculo-plazo {
+  display: inline;
+}
+
+footer {
+  padding: 10px;
+  background-color: #333;
+  height: 92px;
+
+}
+
+.lema {
+    text-align: center;
+    color: #fff;
+    padding: 20px 20px;
+
+}
